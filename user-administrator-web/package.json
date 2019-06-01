@@ -1,0 +1,24 @@
+{
+  "name": "prueba-ui.router",
+  "version": "0.0.1",
+  "description": "pruebas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "gulp develop"
+  },
+  "author": "mitchell contreras",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "gulp": "^3.9.1",
+    "gulp-inject": "^4.3.0",
+    "gulp-nodemon": "^2.2.1",
+    "main-bower-files": "^2.13.1",
+    "run-sequence": "^2.2.1"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "main-bower-files": "^2.13.1"
+  }
+}

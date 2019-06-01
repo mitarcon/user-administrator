@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My index</title>
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-messaging.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-functions.js"></script>
+  <script>
+    // Initialize Firebase
+    // TODO: Replace with your project's customized code snippet
+    var config = {
+      apiKey: "<API_KEY>",
+      authDomain: "<PROJECT_ID>.firebaseapp.com",
+      databaseURL: "https://<DATABASE_NAME>.firebaseio.com",
+      storageBucket: "<BUCKET>.appspot.com",
+      messagingSenderId: "<SENDER_ID>",
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <!-- bower:css -->
+  <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- endinject -->
+
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/webapp/css/vendor.css">
+  <!-- endinject -->
+
+</head>
+<body ng-app="mitchapp">
+
+  <div class="container">
+    <div ui-view="navbar"></div>
+    <div class="row">
+      <div ui-view="firstPart" class="col-md-4"></div>
+      <div ui-view="SecondPart" class="col-md-8"></></div>
+    </div>
+    <div class="row">
+      <div ui-view="allCol" class="col-md-12"></div>
+    </div>
+  </div>
+  <div ui-view="allView"></div>
+  <!-- <ui-view/> -->
+
+  <!-- bower:js -->
+
+  <script src="/bower_components/angular/angular.js"></script>
+
+  <script src="/bower_components/angular-aria/angular-aria.js"></script>
+
+  <script src="/bower_components/angular-animate/angular-animate.js"></script>
+
+  <script src="/bower_components/angular-messages/angular-messages.js"></script>
+
+  <script src="/bower_components/angular-resource/angular-resource.js"></script>
+
+  <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+
+  <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
+
+  <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+  <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+  <script src="/bower_components/angular-material/angular-material.js"></script>
+
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+
+  <script src="/bower_components/popper.js/dist/umd/popper.js"></script>
+
+  <script src="/bower_components/ngstorage/ngStorage.js"></script>
+
+  <script src="/bower_components/angular-agility/dist/angular-agility.min.js"></script>
+
+  <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+  <!-- endinject -->
+
+
+  <!-- inject:js -->
+
+  <script src="/webapp/app/app.module.js"></script>
+
+  <script src="/webapp/app/app.state.js"></script>
+
+  <script src="/webapp/app/app.config/aa.config.js"></script>
+
+  <script src="/webapp/app/services/storage.factory.js"></script>
+
+  <script src="/webapp/app/directives/validators/dinamic.interval.val.directive.js"></script>
+
+  <script src="/webapp/app/components/admin/admin.controller.js"></script>
+
+  <script src="/webapp/app/components/admin/admin.state.js"></script>
+
+  <script src="/webapp/app/components/client/client-state.js"></script>
+
+  <script src="/webapp/app/components/client/client.controller.js"></script>
+
+  <script src="/webapp/app/components/home/home.controller.js"></script>
+
+  <script src="/webapp/app/components/home/home.state.js"></script>
+
+  <script src="/webapp/app/components/login/login.controller.js"></script>
+
+  <script src="/webapp/app/components/login/login.state.js"></script>
+
+  <script src="/webapp/app/components/navbar/navbar.controller.js"></script>
+
+  <script src="/webapp/app/components/staff/staff.controller.js"></script>
+
+  <script src="/webapp/app/components/staff/staff.state.js"></script>
+
+  <script src="/webapp/app/components/project/project.controller.js"></script>
+
+  <script src="/webapp/app/components/project/project.state.js"></script>
+
+  <script src="/webapp/app/components/store/store.controller.js"></script>
+
+  <script src="/webapp/app/components/store/store.state.js"></script>
+
+  <script src="/webapp/app/components/system/system.state.js"></script>
+
+  <script src="/webapp/app/components/project/navbar/navbar.controller.js"></script>
+
+  <script src="/webapp/app/components/project/list/list.controller.js"></script>
+
+  <script src="/webapp/app/components/project/list/list.state.js"></script>
+
+  <script src="/webapp/app/components/project/specification/specification.controller.js"></script>
+
+  <script src="/webapp/app/components/project/specification/specification.state.js"></script>
+
+  <!-- endinject -->
+
+</body>
+</html>

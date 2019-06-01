@@ -1,0 +1,29 @@
+
+<ng-form name="exampleForm">
+
+	<!-- <input
+	  type="number"
+		aa-field-group="vm.person.age"
+		aa-col="md-3"
+		aa-label="Edad"
+		min="0" max="140" name="age" required> -->
+
+	<input
+	  type="text"
+		aa-label="Curso"
+		aa-field-group="vm.person.secction"
+		val-dinamic-interval
+		error-mitchell="['Curso', 'Auto']"
+		val-di-limit-min="vm.curso.min"
+		val-di-limit-max="vm.curso.max"
+		val-di-limit-exclusive="vm.curso.exclusive"
+		val-di-limit-exception-fn="vm.curso.exception"
+		error-mitchell-msg="{0} error de este tipo {1}"
+		name="seccion">
+
+<button type="button" ng-click="vm.save(exampleForm)">obtener form</button>
+	<button type=submit name="button" aa-submit-form="vm.save(exampleForm)">
+		Guardar el formulario
+	</button>
+
+</ng-form>

@@ -1,0 +1,21 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="https://www.w3schools.com/images/picture.jpg" id="icon" alt="User Icon" />
+      
+    </div>
+
+    <!-- Login Form -->
+    <form ng-submit="vm.login()">
+      <input
+        type="text" id="login" class="fadeIn second"
+        name="login" placeholder="login" ng-model="vm.user.username">
+      <input type="text" id="password" class="fadeIn third"
+        name="login" placeholder="password" ng-model="vm.user.password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+
+  </div>
+</div>
