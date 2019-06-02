@@ -9,14 +9,28 @@
 
 	function Service($http) {
 		return {
-			findByFilterAndPage: findByFilterAndPage
+			findByFilterAndPage: findByFilterAndPage,
+			downloadPdf: downloadPdf
 		}
 
-		function findByFilterAndPage (params) {
+		function findByFilterAndPage(params) {
 			var urlQuery = url + 'clients';
 			return $http({
 				method: 'GET',
 				url: urlQuery,
+				params: params
+			});
+		}
+
+		function downloadPdf(params) {
+			var urlQuery = url + 'clients/report';
+			return $http({
+				method: 'GET',
+				url: urlQuery,
+				headers: {
+					'Content-type': 'application/json'
+				},
+				responseType: 'arraybuffer',
 				params: params
 			});
 		}

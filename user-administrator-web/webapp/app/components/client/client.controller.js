@@ -86,7 +86,18 @@
     }
 
     function downloadSearch() {
-
+      var params = {
+        store: vm.searchParam.store === 0 ? null : vm.searchParam.store,
+        localization: vm.searchParam.localization === 0 ? null : vm.searchParam.localization
+      }
+      ClientService.downloadPdf(params)
+        .then(function (response) {
+          var file = new Blob([response.data], { type: 'application/pdf' });
+          var fileURL = URL.createObjectURL(file);
+          window.open(fileURL);
+        }).catch(function (err) {
+          console.log("error ", err)
+        });
     }
   }
 })();
