@@ -2,10 +2,9 @@ package com.mitarcon.user.admin.core.service.impl;
 
 import java.io.ByteArrayInputStream;
 import java.util.List;
-
 import org.cactoos.list.ListOf;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
-
 import com.mitarcon.user.admin.core.model.Client;
 import com.mitarcon.user.admin.core.model.Localization;
 import com.mitarcon.user.admin.core.model.Store;
@@ -24,34 +23,35 @@ public class ClientServiceImpl implements ClientService {
   }
 
   @Override
-  public List<Client> findUserByFilterAndPage(Pagination pagination, Long idStore,
+  public Page<Client> findUserByFilterAndPage(Pagination pagination, Long idStore,
       Long idLocalization) {
-     
-    List<Client> clients = null;
-    
+
+    Page<Client> clients = null;
+
     // Validar para saber que consulta se debe disparar
     // Esto debe llevarse a ser generico al igual que el filterPage
     // lo veo como algo asi https://sgitario.github.io/how-to-map-filters-from-rest-api-to/
-    
+
     if (null != idStore && null != idLocalization) {
       // Ambos parametros son validos
-      clients =  clientRepository.findByStoreAndLocalization(Store.builder().id(idStore).build(),
-           Localization.builder().id(idLocalization).build(), pagination.getPageRequest()).getContent();
-      
+      clients = clientRepository.findByStoreAndLocalization(Store.builder().id(idStore).build(),
+          Localization.builder().id(idLocalization).build(), pagination.getPageRequest());
+
     } else if (null != idStore && null == idLocalization) {
       // Solo store
       clients = clientRepository.findByStore(Store.builder().id(idStore).build(),
-          pagination.getPageRequest()).getContent();
-      
+          pagination.getPageRequest());
+
     } else if (null == idStore && null != idLocalization) {
       // Solo localizacion
-      clients = clientRepository.findByLocalization(Localization.builder().id(idLocalization).build());
-      
+      clients = clientRepository.findByLocalization(
+          Localization.builder().id(idLocalization).build(), pagination.getPageRequest());
+
     } else {
-      clients = clientRepository.findAll(pagination.getPageRequest()).getContent();
-      
+      clients = clientRepository.findAll(pagination.getPageRequest());
+
     }
-    
+
     return clients;
   }
 

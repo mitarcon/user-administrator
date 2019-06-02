@@ -3,7 +3,7 @@
 
     <!-- Icon -->
     <div class="fadeIn first">
-      <img src="https://www.w3schools.com/images/picture.jpg" id="icon" alt="User Icon" />
+      <img src="http://static.t13.cl/images/sizes/1200x675/1506629404-98065799463ebdce-bddb-4485-a0ff-1dccc87b6a22.jpg" id="icon" alt="User Icon" />
       
     </div>
 
@@ -11,10 +11,10 @@
     <form ng-submit="vm.login()">
       <input
         type="text" id="login" class="fadeIn second"
-        name="login" placeholder="login" ng-model="vm.user.username">
+        name="email" placeholder="{{ 'login.email' | translate }}" ng-model="vm.user.username">
       <input type="text" id="password" class="fadeIn third"
-        name="login" placeholder="password" ng-model="vm.user.password">
-      <input type="submit" class="fadeIn fourth" value="Log In">
+        name="passsword" placeholder="{{ 'login.password' | translate }}" ng-model="vm.user.password">
+      <input type="submit" class="fadeIn fourth" value="{{ 'login.login' | translate }}">
     </form>
 
   </div>

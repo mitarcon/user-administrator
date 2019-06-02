@@ -5,7 +5,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/user-admin?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/user-administrator?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
     username: root
     password: root
   jpa:
@@ -13,14 +13,14 @@ spring:
     hibernate:
       dialect: org.hibernate.dialect.MySQL5InnoDBDialect
       #none, validate, update, create, and create-drop
-      ddl-auto: update
+      ddl-auto: validate
   jackson:
     default-property-inclusion: NON_NULL
     
 logging:
   level:
     org.springframework: ERROR
-    com.mitarcon: INFO #DEBUG
+    com.mitarcon: DEBUG  #DEBUG
   pattern:
     console: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
     file: "%d %p %c{1.} [%t] %m%n"

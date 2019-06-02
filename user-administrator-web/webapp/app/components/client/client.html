@@ -1,1 +1,111 @@
-LISTA DE CLIENTES
+<div class="container">
+	<h1 class="display-4 text-center">{{ 'clients.title' | translate }}</h1>
+
+	<h3>Buscar por:</h3>
+
+	<!-- formulario de acciones -->
+	<div class="row">
+		<div class="col-md-3">
+			<div class="form-group">
+				<label for="store-id">{{ 'clients.store' | translate }}</label>
+				<select class="browser-default custom-select" id="store-id" ng-model="vm.searchParam.store"
+					ng-options="element.id as element.name for element in vm.stores">
+				</select>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="form-group">
+				<label for="sel1">{{ 'clients.localization' | translate }}</label>
+				<select class="browser-default custom-select" id="localization-id" ng-model="vm.searchParam.localization"
+					ng-options="element.id as element.name for element in vm.localizations">
+				</select>
+			</div>
+		</div>
+		<div class="col-md-1">
+			<button type="button" class="btn btn-primary" style="margin-top: 19px;" ng-click="vm.searchClients()">
+				{{ 'clients.search' | translate }}
+			</button>
+		</div>
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-2 text-right">
+			<button type="button" class="btn btn-secondary" style="margin-top: 19px;" ng-click="vm.searchClients()">
+				{{ 'clients.create' | translate }}
+			</button>
+			<button type="button" class="btn btn-link" style="margin-top: 19px;" ng-click="vm.searchClients()">
+				{{ 'clients.download' | translate }}
+			</button>
+		</div>
+	</div>
+
+	<!-- No hay elementos -->
+	<div ng-if="vm.clients.length === 0" class="text-center mt-5">
+		<h3>{{ 'clients.notElement' | translate }}</h3>
+	</div>
+
+	<!-- Tabla  de clientes-->
+	<div ng-if=" vm.clients.length > 0">
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">{{ 'clients.table.name' | translate }}</th>
+					<th scope="col">{{ 'clients.table.store' | translate }}</th>
+					<th scope="col">{{ 'clients.table.localization' | translate }}</th>
+					<th scope="col">{{ 'clients.table.status' | translate }}</th>
+					<th scope="col">{{ 'clients.table.action' | translate }}</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="client in vm.clients">
+					<th>{{ client.name }}</th>
+					<td>{{ client.store.name }}</td>
+					<td>{{ client.localization.name }}</td>
+					<td>{{ client.status }}</td>
+					<td>{{ Acciones }}</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr class="text-right">
+					<td colspan="5"> {{ 'clients.table.totalElement' | translate }} <b>{{vm.searchParam.totalElements}}</b></td>
+				</tr>
+			</tfoot>
+		</table>
+
+		<!-- Paginacion -->
+		<div class="row mt-3 justify-content-md-center">
+			<div class="col-md-2 text-center">
+				<div class="btn-group mr-2" role="group" aria-label="First group">
+					<button type="button" class="btn"
+						ng-disabled="vm.searchParam.page === 0"
+					  ng-click="vm.changePage(-1)">
+						{{ 'clients.table.pageBefore' | translate }}
+					</button>
+					<button type="button" class="btn">
+						{{ vm.searchParam.page +1 }}
+					</button>
+					<button type="button" class="btn"
+						ng-click="vm.changePage(+1)"
+						ng-disabled="vm.searchParam.page === vm.searchParam.totalPages - 1">
+						{{ 'clients.table.pageNext' | translate }}
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Tamaño de pagina -->
+		<div class="row mt-3 justify-content-md-center">
+			<div class="col-md-2 text-center">
+				<div class="btn-group mr-2" role="group" aria-label="First group">
+					<button type="button" class="btn"
+						ng-repeat="element in vm.sizePage"
+						ng-class="{'btn-primary': element === vm.searchParam.size}"
+						ng-click="vm.changeSize(element)">
+						{{element}}
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div>

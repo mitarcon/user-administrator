@@ -17,6 +17,9 @@
     "jquery": "^3.3.1",
     "popper.js": "^1.12.9",
     "ngstorage": "^0.3.11",
-    "angular-agility": "^0.8.40"
+    "angular-agility": "^0.8.40",
+    "angular-translate": "2.18.1",
+    "ng-table": "^4.0.0",
+    "ng-table-bundle": "^4.0.0"
   }
 }

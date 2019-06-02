@@ -1,8 +1,7 @@
 package com.mitarcon.user.admin.core.controller;
 
-import java.util.List;
-
 import org.springframework.core.io.InputStreamResource;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,7 +31,7 @@ public class ClientController {
   }
 
   @GetMapping
-  public List<Client> findPage(@RequestParam(required = false) Long store,
+  public Page<Client> findPage(@RequestParam(required = false) Long store,
       @RequestParam(required = false) Long localization,
       @RequestParam(required = false) Integer page, @RequestParam(required = false) Integer size) {
     log.debug("ClientController:findPage page: " + page + "size: " + size + " store: " + store);

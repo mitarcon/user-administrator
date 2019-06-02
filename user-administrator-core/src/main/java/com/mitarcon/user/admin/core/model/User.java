@@ -42,10 +42,13 @@ public abstract class User {
   @PrePersist
   protected void prePersist() {
     if (this.createdOn == null)
-      createdOn = LocalDateTime.now();
+    	this.createdOn = LocalDateTime.now();
 
     if (this.updateOn == null)
-      updateOn = LocalDateTime.now();
+    	this.updateOn = LocalDateTime.now();
+    
+    if (this.status == null)
+    	this.status = true;
   }
 
   @PreUpdate

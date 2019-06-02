@@ -12,7 +12,7 @@
       views: {
         "allCol@": {
           templateUrl: "/webapp/app/components/client/client.html",
-          controller: "ListProjectController",
+          controller: "ClientController",
           controllerAs: "vm"
         }
       }

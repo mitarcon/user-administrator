@@ -26,10 +26,12 @@
 
   <!-- bower:css -->
   <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
+  <link rel="stylesheet" href="/bower_components/ng-table-bundle/ng-table.css">
   <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-reboot.min.css">
   <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- endinject -->
+  <link rel="stylesheet" href="/bower_components/ng-table-bundle/ng-table.min.css">
 
   <!-- inject:css -->
   <link rel="stylesheet" href="/webapp/css/vendor.css">
@@ -81,9 +83,14 @@
 
   <script src="/bower_components/angular-agility/dist/angular-agility.min.js"></script>
 
+  <script src="/bower_components/angular-translate/angular-translate.js"></script>
+
+  <script src="/bower_components/ng-table-bundle/ng-table.js"></script>
+
   <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
 
   <!-- endinject -->
+  <script src="/bower_components/ng-table-bundle/ng-table.min.js"></script>
 
 
   <!-- inject:js -->
@@ -94,21 +101,27 @@
 
   <script src="/webapp/app/app.config/aa.config.js"></script>
 
+  <script src="/webapp/app/app.config/translate.config.js"></script>
+
   <script src="/webapp/app/services/storage.factory.js"></script>
 
   <script src="/webapp/app/directives/validators/dinamic.interval.val.directive.js"></script>
-
-  <script src="/webapp/app/components/admin/admin.controller.js"></script>
-
-  <script src="/webapp/app/components/admin/admin.state.js"></script>
 
   <script src="/webapp/app/components/client/client-state.js"></script>
 
   <script src="/webapp/app/components/client/client.controller.js"></script>
 
+  <script src="/webapp/app/components/client/client.service.js"></script>
+
+  <script src="/webapp/app/components/admin/admin.controller.js"></script>
+
+  <script src="/webapp/app/components/admin/admin.state.js"></script>
+
   <script src="/webapp/app/components/home/home.controller.js"></script>
 
   <script src="/webapp/app/components/home/home.state.js"></script>
+
+  <script src="/webapp/app/components/localization/localization.service.js"></script>
 
   <script src="/webapp/app/components/login/login.controller.js"></script>
 
@@ -116,25 +129,27 @@
 
   <script src="/webapp/app/components/navbar/navbar.controller.js"></script>
 
-  <script src="/webapp/app/components/staff/staff.controller.js"></script>
-
-  <script src="/webapp/app/components/staff/staff.state.js"></script>
-
   <script src="/webapp/app/components/project/project.controller.js"></script>
 
   <script src="/webapp/app/components/project/project.state.js"></script>
 
+  <script src="/webapp/app/components/staff/staff.controller.js"></script>
+
+  <script src="/webapp/app/components/staff/staff.state.js"></script>
+
   <script src="/webapp/app/components/store/store.controller.js"></script>
+
+  <script src="/webapp/app/components/store/store.service.js"></script>
 
   <script src="/webapp/app/components/store/store.state.js"></script>
 
   <script src="/webapp/app/components/system/system.state.js"></script>
 
-  <script src="/webapp/app/components/project/navbar/navbar.controller.js"></script>
-
   <script src="/webapp/app/components/project/list/list.controller.js"></script>
 
   <script src="/webapp/app/components/project/list/list.state.js"></script>
+
+  <script src="/webapp/app/components/project/navbar/navbar.controller.js"></script>
 
   <script src="/webapp/app/components/project/specification/specification.controller.js"></script>
 

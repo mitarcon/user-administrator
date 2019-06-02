@@ -43,6 +43,7 @@ h2 {
   -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   text-align: center;
+  padding-top: 10px;
 }
 
 #formFooter {
@@ -257,4 +258,17 @@ input[type=text]:placeholder {
 }
 ul li a{
   margin-right: 20px;
+}
+
+/* TEXT */
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
 }

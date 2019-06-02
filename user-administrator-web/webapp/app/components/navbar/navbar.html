@@ -6,21 +6,21 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item">
-          <a class="nav-link" >MITCH-APP<span class="sr-only"></span></a>
+          <a class="nav-link" >{{ 'navbar.nameApp' | translate }}<span class="sr-only"></span></a>
         </li>
         <li class="nav-item dropdown dmenu">
             <a class="nav-link dropdown-toggle"  id="navbardrop" data-toggle="dropdown">
-                Administración
+                {{ 'navbar.administration.title' | translate }}
             </a>
             <div class="dropdown-menu sm-menu">
-                <a class="dropdown-item" ng-href="#/system/client">Clientes</a>
-                <a class="dropdown-item" ng-href="#/system/staff">Staff</a>
-                <a class="dropdown-item" ng-href="#/system/store">Sucursales</a>
+                <a class="dropdown-item" ng-href="#/system/client">{{ 'navbar.client.title' | translate }}</a>
+                <a class="dropdown-item" ng-href="#/system/staff">{{ 'navbar.staff.title' | translate }}</a>
+                <a class="dropdown-item" ng-href="#/system/store">{{ 'navbar.stores.title' | translate }}</a>
             </div>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="mailto:mitchellcontreras@gmail.com?subject=Propuesta de trabajo">
-                Contactanos
+                {{ 'navbar.callme.title' | translate }}
             </a>
         </li>
       </ul>

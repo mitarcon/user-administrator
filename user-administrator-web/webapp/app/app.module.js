@@ -7,7 +7,9 @@
             'ngMaterial',
             'ngStorage',
             'ui.bootstrap',
-            'aa.formExtensions'
+            'aa.formExtensions',
+            'pascalprecht.translate',
+            'ngTable'
         ]);
 
 })();
