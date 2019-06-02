@@ -29,6 +29,9 @@
     vm.downloadSearch = downloadSearch;
     vm.changeSize = changeSize;
     vm.changePage = changePage;
+    vm.describeStatus = describeStatus;
+    vm.changeClientStatus = changeClientStatus;
+    vm.editClient = editClient;
 
     activate();
 
@@ -98,6 +101,25 @@
         }).catch(function (err) {
           console.log("error ", err)
         });
+    }
+
+    function describeStatus(element) {
+      var describe = '---';
+      if (element.status === true) {
+        describe = translate('clients.table.active');
+      } else if (element.status === false) {
+        describe = translate('clients.table.disabled');
+      }
+
+      return describe;
+    }
+
+    function changeClientStatus() {
+
+    }
+
+    function editClient() {
+
     }
   }
 })();

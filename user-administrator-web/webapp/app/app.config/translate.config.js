@@ -42,7 +42,10 @@
             'action': 'Acciones',
             'pageBefore': '<',
             'pageNext': '>',
-            'totalElement': 'Total de elementos'
+            'totalElement': 'Total de elementos',
+            'active': 'Activo',
+            'disabled': 'Desactivado',
+            'edit': 'Editar'
           },
           'notElement': 'No hay elementos para mostrar'
         },

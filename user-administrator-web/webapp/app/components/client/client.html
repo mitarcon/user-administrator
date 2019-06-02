@@ -60,8 +60,16 @@
 					<th>{{ client.name }}</th>
 					<td>{{ client.store.name }}</td>
 					<td>{{ client.localization.name }}</td>
-					<td>{{ client.status }}</td>
-					<td>{{ Acciones }}</td>
+					<td>
+						<button type="button" class="btn btn-link" ng-click="vm.changeClientStatus(client)">
+							{{ vm.describeStatus(client) }}
+						</button>
+					</td>
+					<td>
+						<button type="button" class="btn btn-link" ng-click="vm.editClient(client)">
+								{{ 'clients.table.edit' | translate }}
+						</button>
+					</td>
 				</tr>
 			</tbody>
 			<tfoot>
@@ -75,16 +83,13 @@
 		<div class="row mt-3 justify-content-md-center">
 			<div class="col-md-2 text-center">
 				<div class="btn-group mr-2" role="group" aria-label="First group">
-					<button type="button" class="btn"
-						ng-disabled="vm.searchParam.page === 0"
-					  ng-click="vm.changePage(-1)">
+					<button type="button" class="btn" ng-disabled="vm.searchParam.page === 0" ng-click="vm.changePage(-1)">
 						{{ 'clients.table.pageBefore' | translate }}
 					</button>
 					<button type="button" class="btn">
 						{{ vm.searchParam.page +1 }}
 					</button>
-					<button type="button" class="btn"
-						ng-click="vm.changePage(+1)"
+					<button type="button" class="btn" ng-click="vm.changePage(+1)"
 						ng-disabled="vm.searchParam.page === vm.searchParam.totalPages - 1">
 						{{ 'clients.table.pageNext' | translate }}
 					</button>
@@ -96,10 +101,8 @@
 		<div class="row mt-3 justify-content-md-center">
 			<div class="col-md-2 text-center">
 				<div class="btn-group mr-2" role="group" aria-label="First group">
-					<button type="button" class="btn"
-						ng-repeat="element in vm.sizePage"
-						ng-class="{'btn-primary': element === vm.searchParam.size}"
-						ng-click="vm.changeSize(element)">
+					<button type="button" class="btn" ng-repeat="element in vm.sizePage"
+						ng-class="{'btn-primary': element === vm.searchParam.size}" ng-click="vm.changeSize(element)">
 						{{element}}
 					</button>
 				</div>
