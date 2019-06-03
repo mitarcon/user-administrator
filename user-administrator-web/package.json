@@ -4,8 +4,8 @@
   "description": "pruebas",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "gulp develop"
+    "start:dev": "gulp",
+    "postinstall": "bower install"
   },
   "author": "mitchell contreras",
   "license": "ISC",
