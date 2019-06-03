@@ -33,6 +33,7 @@
     vm.describeStatus = describeStatus;
     vm.changeClientStatus = changeClientStatus;
     vm.editClient = editClient;
+    vm.createClient = createClient;
 
     activate();
 
@@ -135,8 +136,36 @@
       });
     }
 
-    function editClient() {
+    function editClient(client, event) {
+      openModalEdit(event, client);
+    }
 
+    function createClient(event) {
+      openModalEdit(event, {});
+    }
+
+    function openModalEdit(event, client) {
+      $mdDialog.show({
+        controller: 'ClientEditController as vm',
+        templateUrl: '/webapp/app/components/client/client-edit.modal.html',
+        parent: angular.element(document.body),
+        targetEvent: event,
+        clickOutsideToClose: true,
+        fullscreen: false,
+        locals: {
+          'client': angular.copy(client),
+          'localizations': vm.localizations,
+          'stores': vm.stores,
+          'defaultOptionSelect': vm.defaultOptionSelect
+        }
+      })
+        .then(function (response) {
+          if('search' === response) {
+            searchClients();
+          }
+        }, function () {
+          console.log("salio mal");
+        });
     }
 
   }

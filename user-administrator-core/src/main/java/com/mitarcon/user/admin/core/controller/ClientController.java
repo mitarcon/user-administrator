@@ -70,7 +70,7 @@ public class ClientController {
     return updated == null ? ResponseEntity.notFound().build() : ResponseEntity.ok().body(updated);
   }
 
-  @PostMapping(path = {"/{id}/status"})
+  @PutMapping(path = {"/{id}/status"})
   public ResponseEntity<Client> updateStatus(@PathVariable("id") Long id,
       @RequestBody Client client) {
     log.debug("ClientController:delete id: " + id + " client: " + client);

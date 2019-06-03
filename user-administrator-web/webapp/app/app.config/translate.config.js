@@ -49,10 +49,21 @@
             'changeStatusTitle': 'Cambiar status de cliente',
             'changeStatusWarning': '¿Está seguro que desea cambiar el status de {{ name }}'
           },
-          'notElement': 'No hay elementos para mostrar'
+          'notElement': 'No hay elementos para mostrar',
+          'modal-edit':{
+            'name': 'Nombre',
+            'email': 'Correo',
+            'phone': 'Teléfono',
+            'store': 'Agencia',
+            'localization': 'Localización', 
+            'tittle-edit': 'Editar cliente ',
+            'tittle-create': 'Crear usuario'           
+          }
         },
         'global': {
           'select': 'SELECCIONAR',
+          'acepted': 'Aceptar',
+          'cancel': 'Cancelar'
         }
       });
 

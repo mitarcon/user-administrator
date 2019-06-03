@@ -11,7 +11,9 @@
 		return {
 			findByFilterAndPage: findByFilterAndPage,
 			downloadPdf: downloadPdf,
-			changeStatusClient: changeStatusClient
+			changeStatusClient: changeStatusClient,
+			updateClient: updateClient,
+			createClient: createClient
 		}
 
 		function findByFilterAndPage(params) {
@@ -38,6 +40,24 @@
 
 		function changeStatusClient(idUser, data) {
 			var urlQuery = url + 'clients/' + idUser + '/status';
+			return $http({
+				method: 'PUT',
+				url: urlQuery,
+				data: data
+			});
+		}
+
+		function updateClient(idUser, data) {
+			var urlQuery = url + 'clients/' + idUser;
+			return $http({
+				method: 'PUT',
+				url: urlQuery,
+				data: data
+			});
+		}
+
+		function createClient(data) {
+			var urlQuery = url + 'clients/';
 			return $http({
 				method: 'POST',
 				url: urlQuery,

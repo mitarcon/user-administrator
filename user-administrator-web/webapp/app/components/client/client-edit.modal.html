@@ -1,0 +1,49 @@
+<md-dialog aria-label="Cliente">
+	<form ng-cloak>
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+				<h2 ng-hide="vm.isCreate">{{ 'clients.modal-edit.tittle-edit' | translate }} {{ vm.client.name }}</h2>
+				<h2 ng-show="vm.isCreate">{{ 'clients.modal-edit.tittle-create' | translate }}</h2>
+			</div>
+		</md-toolbar>
+
+		<md-dialog-content>
+			<div class="md-dialog-content">
+				<div class="form-group">
+					<label for="name">{{ 'clients.modal-edit.name' | translate }}</label>
+					<input type="text" class="form-control" id="name" ng-model="vm.client.name">
+				</div>
+				<div class="form-group">
+					<label for="email">{{ 'clients.modal-edit.email' | translate }}</label>
+					<input type="email" class="form-control" id="email" ng-model="vm.client.email">
+				</div>
+				<div class="form-group">
+					<label for="phone">{{ 'clients.modal-edit.phone' | translate }}</label>
+					<input type="text" class="form-control" id="phone" ng-model="vm.client.phone">
+				</div>
+				<div class="form-group">
+					<label for="store-id">{{ 'clients.store' | translate }}</label>
+					<select class="browser-default custom-select" id="store-id" ng-model="vm.client.store.id"
+						ng-options="element.id as element.name for element in vm.stores">
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="sel1">{{ 'clients.localization' | translate }}</label>
+					<select class="browser-default custom-select" id="localization-id" ng-model="vm.client.localization.id"
+						ng-options="element.id as element.name for element in vm.localizations">
+					</select>
+				</div>
+			</div>
+		</md-dialog-content>
+
+		<md-dialog-actions>
+			<span flex></span>
+			<md-button ng-click="vm.closeModal()">
+				{{ 'global.cancel' | translate }}
+			</md-button>
+			<md-button ng-click="vm.save()">
+				{{ 'global.acepted' | translate }}
+			</md-button>
+		</md-dialog-actions>
+	</form>
+</md-dialog>

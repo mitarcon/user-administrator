@@ -17,9 +17,9 @@
 
 
         // For any unmatched url, send to /route1
-        $urlRouterProvider.otherwise("/home/login");
-        $urlRouterProvider.when("", "/home/login");
-        $urlRouterProvider.when("/", "/home/login");
+        $urlRouterProvider.otherwise("/system/client");
+        $urlRouterProvider.when("", "/system/client");
+        $urlRouterProvider.when("/", "/system/client");
 
         // var app = {
         //   name: 'app',
