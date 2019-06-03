@@ -61,7 +61,7 @@
 					<td>{{ client.store.name }}</td>
 					<td>{{ client.localization.name }}</td>
 					<td>
-						<button type="button" class="btn btn-link" ng-click="vm.changeClientStatus(client)">
+						<button type="button" class="btn btn-link" ng-click="vm.changeClientStatus(client, $event)">
 							{{ vm.describeStatus(client) }}
 						</button>
 					</td>

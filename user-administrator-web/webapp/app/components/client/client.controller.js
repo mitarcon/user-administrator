@@ -3,10 +3,11 @@
 
   angular.module("mitchapp").controller("ClientController", Controller);
 
-  Controller.$inject = ['ClientService', 'LocalizationService', 'StoreService', 'translateFilter'];
+  Controller.$inject = ['ClientService', 'LocalizationService', 'StoreService', 'translateFilter',
+    '$mdDialog'];
 
   /* @ngInject */
-  function Controller(ClientService, LocalizationService, StoreService, translate) {
+  function Controller(ClientService, LocalizationService, StoreService, translate, $mdDialog) {
     var vm = this;
 
     // Inicializar variables
@@ -114,12 +115,29 @@
       return describe;
     }
 
-    function changeClientStatus() {
+    function changeClientStatus(client, event) {
+      var confirm = $mdDialog.confirm()
+        .title('Cambiar status de cliente')
+        .textContent(translate('¿Está seguro que desea cambiar el status de ' + client.name + ' ?'))
+        .targetEvent(event)
+        .ok('Aceptar')
+        .cancel('Cancelar');
 
+      $mdDialog.show(confirm).then(function () {
+        var data = { 'status': !client.status };
+        ClientService.changeStatusClient(client.id, data)
+          .then(function (response) {
+            searchClients();
+          })
+          .catch(function () {
+            console.log("No pudo editarse la persona")
+          });
+      });
     }
 
     function editClient() {
 
     }
+
   }
 })();

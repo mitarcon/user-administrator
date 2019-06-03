@@ -10,7 +10,8 @@
 	function Service($http) {
 		return {
 			findByFilterAndPage: findByFilterAndPage,
-			downloadPdf: downloadPdf
+			downloadPdf: downloadPdf,
+			changeStatusClient: changeStatusClient
 		}
 
 		function findByFilterAndPage(params) {
@@ -32,6 +33,15 @@
 				},
 				responseType: 'arraybuffer',
 				params: params
+			});
+		}
+
+		function changeStatusClient(idUser, data) {
+			var urlQuery = url + 'clients/' + idUser + '/status';
+			return $http({
+				method: 'POST',
+				url: urlQuery,
+				data: data
 			});
 		}
 	}

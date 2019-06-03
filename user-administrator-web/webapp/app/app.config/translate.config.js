@@ -45,7 +45,9 @@
             'totalElement': 'Total de elementos',
             'active': 'Activo',
             'disabled': 'Desactivado',
-            'edit': 'Editar'
+            'edit': 'Editar',
+            'changeStatusTitle': 'Cambiar status de cliente',
+            'changeStatusWarning': '¿Está seguro que desea cambiar el status de {{ name }}'
           },
           'notElement': 'No hay elementos para mostrar'
         },
