@@ -12,7 +12,7 @@ import javax.persistence.PreRemove;
 import javax.persistence.PreUpdate;
 
 import org.springframework.data.annotation.CreatedDate;
-
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -34,9 +34,11 @@ public abstract class User {
 
   @CreatedDate
   @Column(name = "created_on")
+  @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
   private LocalDateTime createdOn;
 
   @Column(name = "update_on")
+  @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
   private LocalDateTime updateOn;
 
   @PrePersist
